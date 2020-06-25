@@ -9,21 +9,35 @@
 <html>
 <head>
     <title>Customers</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-<table>
-    <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-    </tr>
-    <c:forEach var="customer" items="${customers}">
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+    <a href="#" class="navbar-brand ml-3"><h3>Customer Relationship Management</h3></a>
+</nav>
+<div class="container m-3">
+    <h1>Customers</h1>
+
+    <table class="table table-striped table-bordered">
         <tr>
-            <td>${customer.firstName}</td>
-            <td>${customer.lastName}</td>
-            <td>${customer.email}</td>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach var="customer" items="${customers}">
+            <tr>
+                <td>${customer.firstName}</td>
+                <td>${customer.lastName}</td>
+                <td>${customer.email}</td>
+            </tr>
+        </c:forEach>
+    </table>
+
+</div>
 </body>
 </html>
