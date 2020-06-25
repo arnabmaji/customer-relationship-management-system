@@ -1,4 +1,4 @@
-package io.github.arnabmaji19.crmsystem.controllers;
+package io.github.arnabmaji19.crmsystem.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
