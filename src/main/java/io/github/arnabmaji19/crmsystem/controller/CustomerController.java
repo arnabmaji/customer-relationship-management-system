@@ -31,4 +31,13 @@ public class CustomerController {
         return "customers";
     }
 
+    @GetMapping("/addCustomer")
+    public String addCustomer() {
+        /*
+         * Render JSP page for add-customer form
+         */
+
+        return "add-customer";
+    }
+
 }

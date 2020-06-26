@@ -17,12 +17,16 @@
 
 </head>
 <body>
+
 <nav class="navbar navbar-expand-sm bg-success navbar-dark">
     <a href="#" class="navbar-brand ml-3"><h3>Customer Relationship Management</h3></a>
 </nav>
+
 <div class="container m-3">
     <h1>Customers</h1>
-
+    <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='addCustomer'">
+        Add Customer
+    </button>
     <table class="table table-striped table-bordered">
         <tr>
             <th>First Name</th>
