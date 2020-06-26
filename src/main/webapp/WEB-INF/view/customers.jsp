@@ -45,7 +45,9 @@
                 <td>${customer.firstName}</td>
                 <td>${customer.lastName}</td>
                 <td>${customer.email}</td>
-                <td><a href="${updateLink}">Update</a></td>
+                <td class="text-center">
+                    <a href="${updateLink}">Update</a>
+                </td>
             </tr>
         </c:forEach>
     </table>
