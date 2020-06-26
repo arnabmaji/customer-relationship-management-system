@@ -1,5 +1,6 @@
 package io.github.arnabmaji19.crmsystem.controller;
 
+import io.github.arnabmaji19.crmsystem.entity.Customer;
 import io.github.arnabmaji19.crmsystem.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,10 +33,14 @@ public class CustomerController {
     }
 
     @GetMapping("/addCustomer")
-    public String addCustomer() {
+    public String addCustomer(Model model) {
         /*
+         * Create Customer Model attribute for binding form data
          * Render JSP page for add-customer form
          */
+
+        var customer = new Customer();
+        model.addAttribute("customer", customer);
 
         return "add-customer";
     }
