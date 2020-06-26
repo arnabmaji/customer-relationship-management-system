@@ -58,4 +58,9 @@ public class CustomerController {
         return "redirect:/customers/list";
     }
 
+    @GetMapping("/updateCustomer")
+    public String updateCustomer() {
+        return "";
+    }
+
 }
