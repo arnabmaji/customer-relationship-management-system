@@ -31,6 +31,8 @@
 
         <div class="border rounded p-3 w-50">
 
+            <form:hidden path="id"/>
+
             <div class="form-group">
                 <label for="firstNameInput">First Name</label>
                 <form:input path="firstName" id="firstNameInput" placeholder="Enter First Name"

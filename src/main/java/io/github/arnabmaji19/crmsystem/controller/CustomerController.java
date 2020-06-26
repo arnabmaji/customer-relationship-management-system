@@ -50,6 +50,7 @@ public class CustomerController {
          * Then redirect to customers list
          */
 
+        System.out.println(customer);
         customerService.saveCustomer(customer);
         return "redirect:/customers/list";
     }

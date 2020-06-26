@@ -31,11 +31,11 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public void saveCustomer(Customer customer) {
         /*
-         * Save a new customer in the database
+         * Save or update customer in the database
          */
 
         var session = sessionFactory.getCurrentSession();
-        session.save(customer);
+        session.saveOrUpdate(customer);
     }
 
     @Override
