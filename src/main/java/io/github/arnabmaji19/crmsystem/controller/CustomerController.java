@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -43,6 +45,17 @@ public class CustomerController {
         model.addAttribute("customer", customer);
 
         return "add-customer";
+    }
+
+    @PostMapping("/addCustomer")
+    public String addCustomer(@ModelAttribute("customer") Customer customer) {
+        /*
+         * Save the customer using CustomerService
+         * Then redirect to customers list
+         */
+
+        customerService.saveCustomer(customer);
+        return "redirect:/customers/list";
     }
 
 }

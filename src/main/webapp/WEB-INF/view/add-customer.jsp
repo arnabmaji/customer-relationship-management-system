@@ -24,8 +24,10 @@
 </nav>
 
 <div class="container m-3">
+
     <h1>Add Customer Form</h1>
-    <form:form modelAttribute="customer" method="post">
+
+    <form:form action="addCustomer" modelAttribute="customer" method="post">
 
         <div class="border rounded p-3 w-50">
 
@@ -36,16 +38,16 @@
             </div>
 
             <div class="form-group">
-                <label for="lastNameInput">First Name</label>
+                <label for="lastNameInput">Last Name</label>
                 <form:input path="lastName" id="lastNameInput" placeholder="Enter Last Name" cssClass="form-control"/>
             </div>
 
             <div class="form-group">
-                <label for="emailInput">First Name</label>
+                <label for="emailInput">Email</label>
                 <form:input path="email" id="emailInput" placeholder="Enter Email" cssClass="form-control"/>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save</button>
 
         </div>
 

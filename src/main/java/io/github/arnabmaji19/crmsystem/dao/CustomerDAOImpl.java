@@ -27,4 +27,14 @@ public class CustomerDAOImpl implements CustomerDAO {
         var query = session.createQuery("from Customer", Customer.class);
         return query.getResultList();
     }
+
+    @Override
+    public void saveCustomer(Customer customer) {
+        /*
+         * Save a new customer in the database
+         */
+
+        var session = sessionFactory.getCurrentSession();
+        session.save(customer);
+    }
 }
