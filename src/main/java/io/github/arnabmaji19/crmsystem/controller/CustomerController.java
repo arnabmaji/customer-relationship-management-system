@@ -4,6 +4,7 @@ import io.github.arnabmaji19.crmsystem.dao.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,8 +18,8 @@ public class CustomerController {
         this.customerDAO = customerDAO;
     }
 
-    @RequestMapping("/")
-    public String customers(Model model) {
+    @GetMapping("/list")
+    public String list(Model model) {
         /*
          * Fetch all customers from database
          * Add customers to model attribute
@@ -27,7 +28,6 @@ public class CustomerController {
 
         var customers = customerDAO.getCustomers();
         model.addAttribute("customers", customers);
-
         return "customers";
     }
 
