@@ -68,4 +68,10 @@ public class CustomerController {
         return "add-customer";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("customerId") int id) {
+
+        return "";
+    }
+
 }
