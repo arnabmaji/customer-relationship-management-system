@@ -36,17 +36,22 @@
             <div class="form-group">
                 <label for="firstNameInput">First Name</label>
                 <form:input path="firstName" id="firstNameInput" placeholder="Enter First Name"
-                            cssClass="form-control"/>
+                            cssClass="form-control" cssErrorClass="form-control is-invalid"/>
+                <form:errors path="firstName" cssClass="invalid-feedback"/>
             </div>
 
             <div class="form-group">
                 <label for="lastNameInput">Last Name</label>
-                <form:input path="lastName" id="lastNameInput" placeholder="Enter Last Name" cssClass="form-control"/>
+                <form:input path="lastName" id="lastNameInput" placeholder="Enter Last Name"
+                            cssClass="form-control" cssErrorClass="form-control is-invalid"/>
+                <form:errors path="lastName" cssClass="invalid-feedback"/>
             </div>
 
             <div class="form-group">
                 <label for="emailInput">Email</label>
-                <form:input path="email" id="emailInput" placeholder="Enter Email" cssClass="form-control"/>
+                <form:input path="email" id="emailInput" placeholder="Enter Email"
+                            cssClass="form-control" cssErrorClass="form-control is-invalid"/>
+                <form:errors path="email" cssClass="invalid-feedback"/>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

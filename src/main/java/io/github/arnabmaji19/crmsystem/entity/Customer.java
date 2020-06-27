@@ -1,6 +1,7 @@
 package io.github.arnabmaji19.crmsystem.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "customer")
@@ -12,12 +13,15 @@ public class Customer {
     private int id;
 
     @Column(name = "first_name")
+    @NotBlank
     private String firstName;
 
     @Column(name = "last_name")
+    @NotBlank
     private String lastName;
 
     @Column(name = "email")
+    @NotBlank
     private String email;
 
     public Customer() {

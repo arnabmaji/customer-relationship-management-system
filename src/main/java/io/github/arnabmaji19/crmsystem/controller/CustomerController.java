@@ -5,7 +5,10 @@ import io.github.arnabmaji19.crmsystem.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/customers")
@@ -44,13 +47,18 @@ public class CustomerController {
     }
 
     @PostMapping("/addCustomer")
-    public String addCustomer(@ModelAttribute("customer") Customer customer) {
+    public String addCustomer(@Valid @ModelAttribute("customer") Customer customer,
+                              BindingResult result) {
         /*
          * Save the customer using CustomerService
          * Then redirect to customers list
          */
 
         System.out.println(customer);
+        System.out.println(">> Binding Result: " + result);
+        if (result.hasErrors())
+            return "add-customer";
+
         customerService.saveCustomer(customer);
         return "redirect:/customers/list";
     }
