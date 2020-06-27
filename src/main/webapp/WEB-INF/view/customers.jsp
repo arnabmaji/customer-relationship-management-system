@@ -36,7 +36,7 @@
         </tr>
         <c:forEach var="customer" items="${customers}">
 
-            <!-- Construct an update link with customer id -->
+            <%--Construct an update link with customer id--%>
             <c:url var="updateLink" value="/customers/updateCustomer">
                 <c:param name="customerId" value="${customer.id}"/>
             </c:url>
@@ -51,12 +51,20 @@
                 <td>${customer.lastName}</td>
                 <td>${customer.email}</td>
                 <td class="text-center">
-                    <a href="${updateLink}">Update</a> | <a href="${deleteLink}">Delete</a>
+                    <a href="${updateLink}">Update</a> | <a href="${deleteLink}" class="confirmation">Delete</a>
                 </td>
             </tr>
         </c:forEach>
     </table>
 
 </div>
+
+<script type="text/javascript">
+
+    $('.confirmation').on('click', function () {
+        return confirm('Are you sure?');
+    });
+
+</script>
 </body>
 </html>
