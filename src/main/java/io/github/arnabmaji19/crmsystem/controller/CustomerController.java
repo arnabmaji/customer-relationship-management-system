@@ -70,8 +70,13 @@ public class CustomerController {
 
     @GetMapping("/delete")
     public String delete(@RequestParam("customerId") int id) {
+        /*
+         * Delete the customer with the given id
+         */
 
-        return "";
+        customerService.deleteCustomer(id);
+        return "redirect:/customers/list";
+
     }
 
 }
