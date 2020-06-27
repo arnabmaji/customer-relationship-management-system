@@ -9,9 +9,9 @@ Simple Web App to Manage Customers
 
 # Installing
 1. Download or Clone the Project. <br>
-2. 
+2. Configure your database settings in <a href="/src/main/webapp/WEB-INF/dispatcher-servlet.xml">dispatcher-servlet.xml</a>
 3. Run command <br>
-```$ maven jetty:run```
+```$ mvn jetty:run```
 
 # Built With
 1. Java<br>
