@@ -76,7 +76,7 @@ public class CustomerController {
         return "add-customer";
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/deleteCustomer")
     public String delete(@RequestParam("customerId") int id) {
         /*
          * Delete the customer with the given id
