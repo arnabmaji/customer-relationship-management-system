@@ -11,5 +11,7 @@
 </head>
 <body>
 <h1>Hello, CRM System!</h1>
+<hr>
+<a href="${pageContext.request.contextPath}/customers/list">Customers</a>
 </body>
 </html>
