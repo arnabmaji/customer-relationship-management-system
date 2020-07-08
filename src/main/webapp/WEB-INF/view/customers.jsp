@@ -6,6 +6,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
@@ -74,7 +75,9 @@
         </c:forEach>
     </table>
 
-    <a href="${pageContext.request.contextPath}/logout"><button class="btn btn-primary mb-3">Log out</button></a>
+    <form:form action="${pageContext.request.contextPath}/logout" method="post">
+        <button class="btn btn-primary mb-3" type="submit">Log out</button>
+    </form:form>
 
 </div>
 
