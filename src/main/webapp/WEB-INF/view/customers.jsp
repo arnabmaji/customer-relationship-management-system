@@ -6,6 +6,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <title>Customers</title>
@@ -24,35 +25,50 @@
 
 <div class="container m-3">
     <h1>Customers</h1>
-    <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='addCustomer'">
-        Add Customer
-    </button>
+
+    <%--show add customer button if user is an admin--%>
+    <security:authorize access="hasRole('ADMIN')">
+        <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='addCustomer'">
+            Add Customer
+        </button>
+    </security:authorize>
+
     <table class="table table-striped table-bordered">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Action</th>
+
+            <security:authorize access="hasRole('ADMIN')">
+                <th>Action</th>
+            </security:authorize>
         </tr>
         <c:forEach var="customer" items="${customers}">
-
-            <%--Construct an update link with customer id--%>
-            <c:url var="updateLink" value="/customers/updateCustomer">
-                <c:param name="customerId" value="${customer.id}"/>
-            </c:url>
-
-            <%--Construct an delete link with customer id--%>
-            <c:url var="deleteLink" value="/customers/deleteCustomer">
-                <c:param name="customerId" value="${customer.id}"/>
-            </c:url>
 
             <tr>
                 <td>${customer.firstName}</td>
                 <td>${customer.lastName}</td>
                 <td>${customer.email}</td>
-                <td class="text-center">
-                    <a href="${updateLink}">Update</a> | <a href="${deleteLink}" class="confirmation">Delete</a>
-                </td>
+
+                    <%--show customer update and action link if user is an admin--%>
+                <security:authorize access="hasRole('ADMIN')">
+
+                    <%--Construct an update link with customer id--%>
+                    <c:url var="updateLink" value="/customers/updateCustomer">
+                        <c:param name="customerId" value="${customer.id}"/>
+                    </c:url>
+
+                    <%--Construct an delete link with customer id--%>
+                    <c:url var="deleteLink" value="/customers/deleteCustomer">
+                        <c:param name="customerId" value="${customer.id}"/>
+                    </c:url>
+
+                    <td class="text-center">
+                        <a href="${updateLink}">Update</a> | <a href="${deleteLink}" class="confirmation">Delete</a>
+                    </td>
+
+                </security:authorize>
+
             </tr>
         </c:forEach>
     </table>
