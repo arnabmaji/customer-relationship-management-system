@@ -21,6 +21,7 @@
 
 <nav class="navbar navbar-expand-sm bg-success navbar-dark">
     <a href="#" class="navbar-brand ml-3"><h3>Customer Relationship Management</h3></a>
+
 </nav>
 
 <div class="container m-3">
@@ -72,6 +73,8 @@
             </tr>
         </c:forEach>
     </table>
+
+    <a href="${pageContext.request.contextPath}/logout"><button class="btn btn-primary mb-3">Log out</button></a>
 
 </div>
 
